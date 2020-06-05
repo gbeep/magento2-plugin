@@ -1,0 +1,8 @@
+<?php
+/**
+ * @var \Gobeep\Ecommerce\Block\Link $block
+ */
+?>
+<?php if ($this->canLink()) : ?>
+    <a href="<?php echo $this->getLink() ?>"><img src="<?php echo $this->getImage() ?>" /></a>
+<?php endif ?>

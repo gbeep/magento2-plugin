@@ -1,0 +1,26 @@
+{
+    "name": "gbeep/magento2-plugin",
+    "description": "Gobeep extension for Magento 2",
+    "version": "1.0.0",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "email": "jgautheron@gobeep.co",
+            "name": "Gobeep"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": " >= 7.2",
+        "gbeep/ecommerce-sdk-php": "^1.0@beta"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Gobeep\\Ecommerce\\": ""
+        }
+    }
+}

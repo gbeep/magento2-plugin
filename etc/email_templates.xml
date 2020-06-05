@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="gobeep_ecommerce_winning_email_template" label="Gobeep Ecommerce Status Winning" file="gobeep_ecommerce_status_winning.html" type="html" module="Gobeep_Ecommerce" area="frontend" />
+    <template id="gobeep_ecommerce_refund_email_template" label="Gobeep Ecommerce Status Refunded" file="gobeep_ecommerce_status_refunded.html" type="html" module="Gobeep_Ecommerce" area="frontend" />
+</config>

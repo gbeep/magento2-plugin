@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Gobeep_Ecommerce::ecommerce" title="Gobeep" module="Gobeep_Ecommerce" sortOrder="51" resource="Gobeep_Ecommerce::ecommerce"/>
+        <add id="Gobeep_Ecommerce::refund" title="Manage Refunds" module="Gobeep_Ecommerce" sortOrder="10" action="gobeep_ecommerce/refund" resource="Gobeep_Ecommerce::refund" parent="Gobeep_Ecommerce::ecommerce"/>
+        <add id="Gobeep_Ecommerce::ecommerce_configuration" title="Configuration" module="Gobeep_Ecommerce" sortOrder="99" parent="Gobeep_Ecommerce::ecommerce" action="adminhtml/system_config/edit/section/gobeep" resource="Gobeep_Ecommerce::ecommerce_configuration"/>
+    </menu>
+</config>

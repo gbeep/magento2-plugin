@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Gobeep_Ecommerce::ecommerce" title="Ecommerce" sortOrder="51">
+                    <resource id="Gobeep_Ecommerce::refund" title="Refunds" sortOrder="10"/>
+                    <resource id="Gobeep_Ecommerce::ecommerce_configuration" title="Configuration" sortOrder="99" />
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Gobeep_Ecommerce::ecommerce_config" title="Gobeep Ecommerce"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
