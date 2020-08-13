@@ -1,5 +1,3 @@
-[![Gitter](https://badges.gitter.im/gbeep/magento2-plugin.svg)](https://gitter.im/gbeep/magento2-plugin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
 ## GoBeep - Ecommerce module - Magento 2x
 
 Gobeep’s extension for Magento 2.x is designed to help clients who use the Magento platform to quickly and seamlessly generate links to validate game codes distributed by Gobeep gaming solution.
@@ -61,16 +59,6 @@ We recommend to use the `New Order` email to integrate the cashier/campaign link
 ###### campaign link
 
 ```{{block class='Magento\\Framework\\View\\Element\\Template' area='frontend' template='Gobeep_Ecommerce::email/link.phtml' order=$order for='campaign'}}```
-
-##### Interstitial
-
-The `Gobeep\Ecommerce\Block\Link` block can be used to display the game UI on `frontend`, this should be done on `cms_home` block ideally. Example below.
-
-```
-<referenceContainer name="content">
-  <block type="Gobeep\Ecommerce\Block\Link" name="gobeep_insterstitial" template="..."></block>
-</referenceContainer>
-```
 
 #### Transactional Email
 
