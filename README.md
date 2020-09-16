@@ -54,11 +54,15 @@ We recommend to use the `New Order` email to integrate the cashier/campaign link
 
 ###### cashier link
 
-```{{block class='Magento\\Framework\\View\\Element\\Template' area='frontend' template='Gobeep_Ecommerce::email/link.phtml' order=$order for='cashier'}}```
+```
+{{block class="Gobeep\Ecommerce\Block\Link" area='frontend' template='Gobeep_Ecommerce::email/link.phtml' for='cashier' store_id=$order.store_id order_id=$order.increment_id order_amount=$order.grand_total}}
+```
 
 ###### campaign link
 
-```{{block class='Magento\\Framework\\View\\Element\\Template' area='frontend' template='Gobeep_Ecommerce::email/link.phtml' order=$order for='campaign'}}```
+```
+{{block class="Gobeep\Ecommerce\Block\Link" area='frontend' template='Gobeep_Ecommerce::email/link.phtml' for='campaign' store_id=$order.store_id order_id=$order.increment_id}}
+```
 
 #### Transactional Email
 
