@@ -52,17 +52,15 @@ class Link extends Template
             return false;
         }
 
-        $order = $this->getData('order');
-        $store = $order ? $order->getStoreId() : null;
-
-        $this->sdk->setStore($store);
+        $storeId = $this->getData('store_id');
+        $this->sdk->setStore($storeId);
         if (!$this->sdk->isReady()) {
             return false;
         }
 
         if ($this->getData('for') === SdkService::TYPE_CASHIER) {
-            $orderAmount = $order->getGrandTotal();
-            if ($orderAmount === 0) {
+            $orderAmount = $this->getData('order_amount');
+            if ($orderAmount == 0) {
                 return false;
             }
         }
@@ -78,8 +76,8 @@ class Link extends Template
      */
     public function getImage()
     {
-        $store = $this->getData('order') ? $this->getData('order')->getStoreId() : null;
-        $this->sdk->setStore($store);
+        $storeId = $this->getData('store_id');
+        $this->sdk->setStore($storeId);
         if ($this->getData('for') === SdkService::TYPE_CASHIER) {
             return $this->sdk->getImage(SdkService::TYPE_CASHIER);
         }
@@ -95,10 +93,14 @@ class Link extends Template
      */
     public function getLink()
     {
-        $store = $this->getData('order') ? $this->getData('order')->getStoreId() : null;
-        $this->sdk->setStore($store);
+        $storeId = $this->getData('store_id');
+
+        $this->sdk->setStore($storeId);
         if ($this->getData('for') === SdkService::TYPE_CASHIER) {
-            return $this->sdk->getCashierLink($this->getData('order'));
+            $orderAmount = $this->getData('order_amount');
+            $orderId = $this->getData('order_id');
+
+            return $this->sdk->getCashierLink($orderAmount, $orderId);
         }
 
         return $this->sdk->getCampaignLink();

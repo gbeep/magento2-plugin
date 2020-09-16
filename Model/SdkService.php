@@ -223,18 +223,16 @@ class SdkService extends AbstractModel
     /**
      * Returns the Gobeep/Ecommerce cashier link
      *
-     * @param Order $order Order object
+     * @param float $orderAmount Order amount
+     * @param string orderId Order identifier
      *
      * @return string
      */
-    public function getCashierLink(Order $order)
+    public function getCashierLink($orderAmount, $orderId)
     {
         if (!$this->isReady()) {
             return '';
         }
-
-        $orderAmount = $order->getGrandTotal();
-        $orderId = $order->getId();
 
         $cashierLink = '';
         try {
