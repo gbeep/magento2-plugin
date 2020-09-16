@@ -21,13 +21,13 @@ And to (optionally) display the game on the frontend.
 
 ### Setup
 
-After the extension is installed, log in to the Magento Account, you'll find the `Gobeep` menu in the left sidebar.
+After the extension has been installed, log in to the Magento Account, you'll find the `Gobeep` menu in the left sidebar.
 
 ### Inputs
 
 | Name                    | Type             | Description                                                                   |  Default  | Required |
 | ----------------------- | ---------------- | ----------------------------------------------------------------------------- | --------- | -------- |
-| enabled                  | yes/no           | Whether extension is disabled or enabled                                      | No        | Yes      |
+| enabled                 | yes/no           | Whether extension is disabled or enabled                                      | No        | Yes      |
 | environment             | text             | Gobeep Environment                                                            | stable    | No       |
 | region                  | text             | Gobeep Region                                                                 | eu        | No       |
 | campaign_id             | text             | Campaign ID (used in `Gobeep_Ecommerce_Block_Link` block)                     |           | Yes      |
@@ -50,7 +50,7 @@ After the extension is installed, log in to the Magento Account, you'll find the
 
 ##### Link block
 
-We recommend to use the `New Order` email to integrate the cashier/campaign links. The `\Magento\Sales\Model\Order` object **MUST** be passed to the block when generating `cashier` links.
+We recommend using the `New Order` email to integrate the cashier/campaign links. The `\Magento\Sales\Model\Order` object **MUST** be passed to the block when generating `cashier` links.
 
 ###### cashier link
 
