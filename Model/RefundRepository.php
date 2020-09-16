@@ -115,7 +115,11 @@ class RefundRepository implements RefundRepositoryInterface
         $refundModel->setStatus(SdkInterface::STATUS_PENDING);
         $refundModel->setOrderId($payload->orderId);
         $refundModel->setCreatedAt($payload->createdAt);
-        $refundModel->setUpdatedAt($payload->updatedAt);
+        if (isset($payload->updatedAt)) {
+            $refundModel->setUpdatedAt($payload->updatedAt);
+        } else {
+            $refundModel->setUpdatedAt($payload->createdAt);
+        }
         $refundModel->setRefundEmailSent(false);
         $refundModel->setWinningEmailSent(false);
 
