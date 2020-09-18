@@ -23,6 +23,7 @@ namespace Gobeep\Ecommerce\Model;
 
 use Exception;
 use Gobeep\Ecommerce\Model\Config\ConfigProvider;
+use Gobeep\Ecommerce\Model\System\Config\Backend\Image;
 use Gobeep\Ecommerce\Sdk as GobeepSdk;
 use Gobeep\Ecommerce\SdkInterface as GoBeepSdkInterface;
 use Magento\Framework\Data\Collection\AbstractDb;
@@ -292,8 +293,9 @@ class SdkService extends AbstractModel
         }
 
         return sprintf(
-            '%stheme/%s',
+            '%s%s/%s',
             $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA),
+            Image::UPLOAD_DIR,
             $image
         );
     }
