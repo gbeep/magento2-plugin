@@ -161,8 +161,6 @@ class Refund extends AbstractModel implements RefundInterface
                 )->addTo(
                     $this->getCustomerEmail(),
                     "{$this->getCustomerFirstname()} {$this->getCustomerLastname()}"
-                )->addBcc(
-                    ['jgautheron@gobeep.co']
                 )->getTransport();
 
                 try {
