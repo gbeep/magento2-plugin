@@ -34,6 +34,23 @@
             </item>
         </argument>
 
+        <massaction name="listing_massaction">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/tree-massactions</item>
+                </item>
+            </argument>
+            <action name="change-status" class="Gobeep\Ecommerce\Ui\Component\Listing\MassActions\DynamicAction">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">change-status</item>
+                        <item name="label" xsi:type="string" translate="true">Change status</item>
+                        <item name="action_resource" xsi:type="object">Gobeep\Ecommerce\Ui\DataProvider\Statuses</item>
+                    </item>
+                </argument>
+            </action>
+        </massaction>
+
         <container name="columns_controls">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -95,6 +112,17 @@
                 </item>
             </item>
         </argument>
+
+        <selectionsColumn name="ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">55</item>
+                    <item name="indexField" xsi:type="string">order_id</item>
+                    <item name="sortOrder" xsi:type="number">6</item>
+                </item>
+            </argument>
+        </selectionsColumn>
 
         <column name="order_id">
             <argument name="data" xsi:type="array">
