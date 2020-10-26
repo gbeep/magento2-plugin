@@ -19,23 +19,19 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Gobeep\Ecommerce\Helper;
+namespace Gobeep\Ecommerce\Ui\Component\Listing\MassActions;
 
-use Gobeep\Ecommerce\SdkInterface;
-use Magento\Framework\App\Helper\AbstractHelper;
-
-class Data extends AbstractHelper
+class DynamicAction extends \Magento\Ui\Component\Action
 {
     /**
-     * Returns possible module statuses
-     *
-     * @return array
+     * @inheritDoc
      */
-    public function getStatuses()
+    public function prepare()
     {
-        return [
-            SdkInterface::STATUS_PENDING => __('Pending'),
-            SdkInterface::STATUS_REFUNDED => __('Refunded'),
-        ];
+        $config = $this->getData('config');
+        if (isset($config['action_resource'])) {
+             $this->actions = $config['action_resource']->getActions();
+        }        
+        parent::prepare();
     }
 }
