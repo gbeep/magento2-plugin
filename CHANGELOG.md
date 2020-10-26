@@ -1,3 +1,13 @@
+## 1.2.0 (October 26, 2020)
+
+FEATURES:
+* Add `Change status` mass-action in the refunds listing.  
+* Add selection in the refunds listing to apply a newly added mass-action for multiple records.
+* Add a link to the related order in the refunds listing. 
+
+FIX:
+* Call translate function properly in the `Helper/Data`.
+
 ## 1.1.0 (September 23, 2020)
 
 FIX:
